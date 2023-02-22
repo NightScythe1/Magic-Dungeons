@@ -1,0 +1,8 @@
+base_unique_melee:
+  active_spell: none
+  use_active_name: false
+  enchantable: true
+  craftable: true
+  item_properties:
+    attributes:
+      custom_enchant_modifier: ceil(rand(0,100))

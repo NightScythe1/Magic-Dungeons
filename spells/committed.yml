@@ -1,0 +1,46 @@
+committed:
+  inherit: base_unique_spell
+  triggers:
+    - damage_dealt
+  name: "§eCommitted"
+  description: Deal 75% more damage depending on missing hp
+  actions:
+    cast:
+    - class: PlayEffects
+      effect: sharp
+    - class: Damage
+      damage: floor(target_health_max/target_health) + 1
+  effects:
+    sharp:
+    - location: target
+      sound: item_armor_equip_chain
+      sound_pitch: 2
+      particle: fireworks_spark
+      particle_offset_x: 0.1
+      particle_offset_y: 0.3
+      particle_offset_z: 0.1
+      particle_count: 3
+      particle_data: 0.1
+    - location: target
+      sound: entity_iron_golem_repair
+      particle: enchantment_table
+      sound_volume: 0.3
+      particle_count: 5
+      particle_offset_x: 0.2
+      particle_offset_y: 0.2
+      particle_offset_z: 0.2
+      particle_data: 0.2
+    - location: target
+      particle: dust_color_transition
+      particle_offset_x: 0.5
+      particle_offset_y: 0.8
+      particle_offset_z: 0.5
+      to_color: "#ffa500"
+      color: "#fafad2"
+      particle_count: 15
+
+  parameters:
+    magic_damage: false
+    target: damage_target
+    target_type: LivingEntity
+    range: 64

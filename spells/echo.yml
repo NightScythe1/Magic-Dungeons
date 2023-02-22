@@ -1,0 +1,44 @@
+echo:
+  inherit: base_unique_spell
+  triggers:
+    - damage_dealt
+  name: "§dEcho"
+  description: Attack 2x up to every 6 seconds
+  actions:
+    cast:
+    - class: PlayEffects
+      effect: sharp
+    - class: Damage
+      damage: "damage_dealt"
+    - class: ApplyCooldown
+      duration: "5000/(custom_enchant_modifier/125)"
+      target_caster: true
+      spells:
+        - echo
+  effects:
+    sharp:
+    - location: target
+      sound: block_end_portal_frame_fill
+      sound_volume: 0.4
+    - location: target
+      sound: entity_shulker_bullet_hit
+      sound_volume: 0.4
+      particle: spell_witch
+      particle_count: 3
+      particle_offset_x: 0.4
+      particle_offset_y: 0.4
+      particle_offset_z: 0.4
+    - location: target
+      particle: dust_color_transition
+      particle_offset_x: 0.4
+      particle_offset_y: 0.4
+      particle_offset_z: 0.4
+      to_color: "#ff00ff"
+      color: "#800080"
+      particle_count: 8
+
+  parameters:
+    magic_damage: false
+    target: damage_target
+    target_type: LivingEntity
+    range: 64

@@ -1,0 +1,28 @@
+rushdown:
+  inherit: base_unique_spell
+  triggers:
+    - kill
+  name: "§fRushdown"
+  passive: true
+  description: Kills cause extra speed for a few seconds
+  actions:
+    cast:
+    - class: PotionEffect
+      duration: 1000+1000*(custom_enchant_modifier/75)
+      add_effects:
+        speed: 1+0.75*(custom_enchant_modifier/25)
+  effects:
+    cast:
+    - location: target
+      particle: sweep_attack
+      particle_offset_x: 1
+      particle_offset_y: 1
+      particle_offset_z: 1
+      particle_count: 5
+      particle_data: 1
+    - sound: entity_bat_takeoff
+      sound_pitch: 2
+  parameters:
+    range: 64
+    target: self
+    target_type: LivingEntity

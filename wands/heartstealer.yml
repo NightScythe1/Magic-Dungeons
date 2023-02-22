@@ -1,0 +1,17 @@
+heartstealer:
+  inherit: base_unique_melee
+  name: "&6Heartstealer"
+  lore:
+  - "&0. "
+  - "&7When in Main Hand:"
+  - "&0. &4@custom_enchant_modifier% Leeching"
+  - "&0. &2$attack_damage Attack Damage"
+  - "&0. &20.7 Attack Speed"
+  icon: iron_sword{CustomModelData:76005}
+  item_attribute_slot: mainhand
+  item_properties:
+    item_attributes:
+      generic_attack_damage: (ceil(rand(60,95))/10)
+      generic_attack_speed: -3.3
+  spells:
+  - leeching

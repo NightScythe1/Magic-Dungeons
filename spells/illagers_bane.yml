@@ -1,0 +1,48 @@
+illagers_bane:
+  inherit: base_unique_spell
+  triggers:
+    - damage_dealt
+  name: "&dIllager's Bane"
+  description: Up to extra 33% damage to Illagers
+  actions:
+    cast:
+    - class: CheckEntity
+      actions:
+        - class: PlayEffects
+          effect: bane
+        - class: Damage
+          damage: "damage_dealt*(custom_enchant_modifier/300)"
+      allowed_entities:
+        - ravager
+        - pillager
+        - evoker
+        - vindicator
+        - vex
+        - illusioner
+  effects:
+    bane:
+    - location: target
+      sound: block_beacon_deactivate
+      sound_volume: 0.4
+      sound_pitch: 2
+      particle: spell_witch
+      particle_count: 3
+      particle_data: 0.1
+    - location: target
+      sound: entity_blaze_hurt
+      particle: smoke_normal
+      particle_count: 3
+      particle_data: 0.1
+    - location: target
+      particle: dust_color_transition
+      particle_offset_x: 0.3
+      particle_offset_y: 0.5
+      particle_offset_z: 0.3
+      to_color: "000000"
+      color: "#800080"
+      particle_count: 20
+  parameters:
+    magic_damage: false
+    target: damage_target
+    target_type: LivingEntity
+    range: 64

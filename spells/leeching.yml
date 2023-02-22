@@ -1,0 +1,35 @@
+leeching:
+  inherit: base_unique_spell
+  triggers:
+    - kill
+  name: "§4Leeching"
+  passive: true
+  description: Steal up to 50% damage dealt on kill
+  actions:
+    cast:
+    - class: Heal
+      amount: "damage_dealt*(custom_enchant_modifier/200)"
+  effects:
+    cast:
+    - location: target
+      particle: heart
+      particle_offset_x: 0.4
+      particle_offset_y: 0.4
+      particle_offset_z: 0.4
+      particle_count: 1
+    - location: target
+      particle: dust_color_transition
+      color: "#8b0000"
+      to_color: "#ff69b4"
+      particle_offset_x: 0.4
+      particle_offset_y: 0.4
+      particle_offset_z: 0.4
+      particle_count: 35
+    - sound: entity_evoker_prepare_attack
+      sound_pitch: 2
+      sound_volume: 0.3
+  parameters:
+    range: 64
+    cooldown: 1000
+    target: self
+    target_type: LivingEntity

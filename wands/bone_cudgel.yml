@@ -1,0 +1,17 @@
+bone_cudgel:
+  inherit: base_unique_melee
+  name: "&6Bone Cudgel"
+  lore:
+  - "&0. "
+  - "&7When in Main Hand:"
+  - "&0. &d@custom_enchant_modifier% Illager's Bane"
+  - "&0. &2$attack_damage Attack Damage"
+  - "&0. &20.4 Attack Speed"
+  icon: iron_axe{CustomModelData:76004}
+  item_attribute_slot: mainhand
+  item_properties:
+    item_attributes:
+      generic_attack_damage: (ceil(rand(85,120))/10)
+      generic_attack_speed: -3.6
+  spells:
+  - illagers_bane

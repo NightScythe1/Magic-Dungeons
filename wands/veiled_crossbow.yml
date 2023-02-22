@@ -1,0 +1,16 @@
+veiled_crossbow:
+  inherit: base_unique_ranged
+  name: "&6&lVeiled Crossbow"
+  lore:
+  - "&5Shadow Shot"
+  - "&7When Fully Drawn:"
+  - "&0. &24.5x Damage Multiplier"
+  - "&0. &22x Speed Multiplier"
+  icon: crossbow{CustomModelData:76001}
+  item_attribute_slot: mainhand
+  overrides:
+    arrow_shadow_shot:
+      arrow_damage: "bowpull * 4.5"
+      speed: "bowpull * 2"
+  spells:
+  - arrow_shadow_shot

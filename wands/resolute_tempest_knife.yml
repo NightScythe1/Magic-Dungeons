@@ -1,0 +1,17 @@
+resolute_tempest_knife:
+  inherit: base_unique_melee
+  name: "&6Resolute Tempest Knife"
+  lore:
+  - "&0. "
+  - "&7When in Main Hand:"
+  - "&0. &f@custom_enchant_modifier% Rushdown"
+  - "&0. &2$attack_damage Attack Damage"
+  - "&0. &22.4 Attack Speed"
+  icon: iron_sword{CustomModelData:76008}
+  item_attribute_slot: mainhand
+  item_properties:
+    item_attributes:
+      generic_attack_damage: (ceil(rand(35,55))/10)
+      generic_attack_speed: -1.6
+  spells:
+  - rushdown

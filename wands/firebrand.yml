@@ -1,0 +1,17 @@
+firebrand:
+  inherit: base_unique_melee
+  name: "&6Firebrand"
+  lore:
+  - "&0. "
+  - "&7When in Main Hand:"
+  - "&0. &c@custom_enchant_modifier% Burning"
+  - "&0. &2$attack_damage Attack Damage"
+  - "&0. &21 Attack Speed"
+  icon: iron_axe{CustomModelData:76006}
+  item_attribute_slot: mainhand
+  item_properties:
+    item_attributes:
+      generic_attack_damage: (ceil(rand(60,95))/10)
+      generic_attack_speed: -3
+  spells:
+  - burning

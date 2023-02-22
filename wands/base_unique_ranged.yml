@@ -1,0 +1,6 @@
+base_unique_ranged:
+  active_spell: none
+  use_active_name: false
+  slots:
+      - "Enchant Slot"
+      - "Enchant Slot"

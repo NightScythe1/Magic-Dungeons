@@ -1,0 +1,57 @@
+poison_cloud:
+  inherit: base_unique_spell
+  triggers:
+    - damage_dealt
+  name: "§aPoison Cloud"
+  description: Hit for 25% chance of Poison cloud
+  actions:
+    cast:
+    - class: Probability
+      probability: 0.25
+      actions:
+        - class: Interval
+          duration: 2000+1250*(custom_enchant_modifier/40)
+          interval: 750
+          actions:
+            - class: AreaOfEffect
+              target_source: true
+              radius: 3.5
+              actions:
+                - class: PlayEffects
+                  effects: poison
+                - class: PotionEffect
+                  duration: 4000
+                  add_effects:
+                    poison: 0+1*(custom_enchant_modifier/100)
+        - class: ApplyCooldown
+          duration: 2500
+          target_caster: true
+          spells:
+            - poison_cloud
+  effects:
+    poison:
+    - location: target
+      particle: sneeze
+      particle_count: 20
+      particle_offset_x: 1.5
+      particle_offset_y: 0.5
+      particle_offset_z: 1.5
+      offset: 0,-0.5,0
+    - location: target
+      particle: dust_color_transition
+      color: "#adff2f"
+      to_color: "#006400"
+      particle_count: 1
+      particle_size: 2
+      particle_offset_x: 1.5
+      particle_offset_y: 0.5
+      particle_offset_z: 1.5
+      offset: 0,0,0
+    - sound: block_candle_extinguish
+      sound_volume: 0.4
+      sound_pitch: -2
+  parameters:
+    target: block
+    target_type: LivingEntity
+    range: 3
+    allow_max_range: true

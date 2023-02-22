@@ -1,0 +1,43 @@
+rampaging:
+  inherit: base_unique_spell
+  triggers:
+    - kill
+  name: "§9Rampaging"
+  passive: true
+  description: Kill for up to 20% chance of Haste IV
+  actions:
+    cast:
+    - class: Probability
+      probability: custom_enchant_modifier/500
+      actions:
+        - class: PlayEffects
+          effect: rampage
+        - class: PotionEffect
+          duration: 20000
+          add_effects:
+            fast_digging: 3
+  effects:
+    rampage:
+    - location: origin
+      sound: entity_iron_golem_hurt
+      sound_pitch: 2
+      particle: smoke_large
+      particle_count: 3
+    - location: origin
+      sound: block_anvil_destroy
+      sound_pitch: 2
+      particle: crit
+      particle_count: 6
+    - location: origin
+      source_location: body
+      particle: dust_color_transition
+      particle_offset_x: 0.5
+      particle_offset_y: 0.9
+      particle_offset_z: 0.5
+      to_color: "#ff0000"
+      color: "#0000ff"
+      particle_count: 30
+  parameters:
+    range: 64
+    target: self
+    target_type: LivingEntity

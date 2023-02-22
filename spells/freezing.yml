@@ -1,0 +1,35 @@
+freezing:
+  inherit: base_unique_spell
+  triggers:
+    - damage_dealt
+  name: "§bFreezing"
+  passive: true
+  description: Slow enemies 40% for 3 seconds
+  actions:
+    cast:
+    - class: PotionEffect
+      duration: 2000+1250*(custom_enchant_modifier/40)
+      add_effects:
+        slow: 0+1*(custom_enchant_modifier/50)
+  effects:
+    cast:
+    - location: target
+      sound: entity_player_hurt_freeze
+      particle: snowflake
+      particle_count: 5
+    - location: target
+      particle: dust_color_transition
+      duration: 3000
+      particle_size: 2
+      particle_offset_x: 0.2
+      particle_offset_y: 0.5
+      particle_offset_z: 0.2
+      to_color: "#00bfff"
+      color: "#ffffff"
+      particle_count: 4
+
+  parameters:
+    cooldown: 1500
+    target: damage_target
+    target_type: LivingEntity
+    range: 64

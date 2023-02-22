@@ -1,0 +1,38 @@
+razor:
+  inherit: base_unique_spell
+  triggers:
+    - damage_dealt
+  name: "§fRazor"
+  description: Up to extra 20% damage
+  actions:
+    cast:
+    - class: PlayEffects
+      effect: sharp
+    - class: Damage
+      damage: "damage_dealt*(custom_enchant_modifier/500)"
+  effects:
+    sharp:
+    - location: target
+      sound: item_armor_equip_iron
+      sound_pitch: 2
+      particle: crit
+      particle_count: 1
+    - location: target
+      sound: entity_player_attack_sweep
+      particle: crit_magic
+      particle_count: 1
+    - location: target
+      particle: dust_color_transition
+      particle_offset_x: 0.3
+      particle_offset_y: 0.5
+      particle_offset_z: 0.3
+      to_color: "ffffff"
+      color: "#00bfff"
+      particle_count: 5
+
+  parameters:
+    magic_damage: false
+    damage_type: physical
+    target: damage_target
+    target_type: LivingEntity
+    range: 64

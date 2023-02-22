@@ -1,0 +1,54 @@
+ambush:
+  inherit: base_unique_spell
+  triggers:
+    - sneak
+  name: "§4Ambush"
+  description: Deal up to 33% more damage with sneak attacks
+  actions:
+    cast:
+    - class: Interval
+      duration: 10000
+      actions:
+        - class: CheckTrigger
+          trigger: damage_dealt
+          actions:
+            - class: ChangeContext
+              target: other_entity
+              actions:
+                - class: PlayEffects
+                  requires_entity_target: true
+                  effect: ambush
+                - class: Damage
+                  requires_entity_target: true
+                  damage: "damage_dealt*(custom_enchant_modifier/300)"
+                - class: Stop
+                  requires_entity_target: true
+        - class: CheckTrigger
+          trigger: stop_sneak
+          actions:
+            - class: Stop
+  effects:
+    ambush:
+    - location: target
+      particle: dust_color_transition
+      color: "#ff0000"
+      to_color: "#000000"
+      particle_offset_x: 0.3
+      particle_offset_y: 1
+      particle_offset_z: 0.3
+      particle_count: 10
+    - location: target
+      particle: villager_angry
+      particle_offset_x: 0.4
+      particle_offset_y: 0.4
+      particle_offset_z: 0.4
+      particle_count: 3
+      particle_data: 1
+    - sound: enchant_thorns_hit
+  parameters:
+    magic_damage: false
+    damage_type: physical
+    range: 64
+    cancel_on_no_wand: true
+    target: damage_target
+    target_type: LivingEntity

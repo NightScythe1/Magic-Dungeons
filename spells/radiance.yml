@@ -1,0 +1,59 @@
+radiance:
+  inherit: base_unique_spell
+  triggers:
+    - damage_dealt
+  name: "§eRadiance"
+  description: Hits up to 25% chance for Health I aura
+  actions:
+    cast:
+    - class: Probability
+      probability: custom_enchant_modifier/400
+      actions:
+        - class: PlayEffects
+          effect: radiant
+        - class: AreaOfEffect
+          radius: 4
+          actions:
+            - class: PotionEffect
+              add_effects:
+                heal: 0
+            - class: ApplyCooldown
+              duration: 2000
+              target_caster: true
+              spells:
+                - radiance
+  effects:
+     radiant:
+     - location: origin
+       source_location: feet
+       target_location: feet
+       target_offset: 0,0.5,0
+       sound: block_beacon_activate
+       sound_pitch: 2
+       sound_volume: 0.5
+     - location: origin
+       source_location: feet
+       target_location: feet
+       effectlib:
+          class: Modified
+          duration: 200
+          parameters:
+              radius: "(t/i) * 6 + 0.2"
+          effect:
+              class: Helix
+              particle: dust_color_transition
+              color: "#ffffff"
+              to_color: "#ffff00"
+              strands: 6
+              curve: 2
+              particles: 20
+              update_locations: false
+              offset: 0,0.1,0
+
+  parameters:
+    magic_damage: false
+    target_self: true
+    target: self
+    target_type: LivingEntity
+    range: 64
+    allow_max_range: true

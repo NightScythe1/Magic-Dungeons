@@ -1,0 +1,35 @@
+void_strike:
+  inherit: base_unique_spell
+  triggers:
+    - damage_dealt
+  name: "§5Void Strike"
+  description: Random 0-200% damage multiplier
+  actions:
+    cast:
+    - class: PlayEffects
+      effect: void
+    - class: Damage
+      damage: "rand(0,(custom_enchant_modifier/50))*damage_dealt"
+  effects:
+    void:
+    - location: target
+      sound: entity_zombie_villager_converted
+      sound_pitch: 2
+      sound_volume: 0.5
+      particle: crit
+      particle_count: 1
+    - location: target
+      particle_size: 2
+      particle: dust_color_transition
+      particle_offset_x: 0.4
+      particle_offset_y: 0.8
+      particle_offset_z: 0.4
+      to_color: "000000"
+      color: "#ff1493"
+      particle_count: 5
+
+  parameters:
+    magic_damage: false
+    target: damage_target
+    target_type: LivingEntity
+    range: 64

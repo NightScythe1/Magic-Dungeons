@@ -1,0 +1,18 @@
+drop_weapon:
+  actions:
+    cast:
+    - class: SpawnEntity
+      type: experience_orb
+      xp: 180
+    - class: Random
+      actions:
+        - class: Disarm
+          keep_in_inventory: false
+        - class: SpawnEntity
+          type: experience_orb
+          xp: 60
+        - class: SpawnEntity
+          type: experience_orb
+          xp: 60
+  parameters:
+    target: self

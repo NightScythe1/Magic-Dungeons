@@ -1,0 +1,35 @@
+burning:
+  inherit: base_unique_spell
+  triggers:
+    - damage_dealt
+  name: "§cBurning"
+  passive: true
+  description: Ignite enemies for seconds
+  actions:
+    cast:
+    - class: Ignite
+      duration: 1000+2000*(custom_enchant_modifier/25)
+  effects:
+    cast:
+    - location: target
+      sound: entity_blaze_shoot
+      sound_pitch: 2
+      sound_volume: 0.4
+      particle: flame
+      particle_count: 9
+      particle_data: 0.05
+    - location: target
+      particle: dust_color_transition
+      duration: 3000
+      particle_size: 2
+      particle_offset_x: 0.3
+      particle_offset_y: 0.6
+      particle_offset_z: 0.3
+      to_color: "#ff0000"
+      color: "#ffff00"
+      particle_count: 15
+
+  parameters:
+    target: damage_target
+    target_type: LivingEntity
+    range: 64

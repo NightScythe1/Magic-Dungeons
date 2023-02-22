@@ -1,0 +1,60 @@
+busy_bee:
+  inherit: base_unique_spell
+  triggers:
+    - kill
+  name: "§eBusy Bee"
+  description: Kills have a chance to summon a bee
+  actions:
+    cast:
+    - class: Probability
+      probability: "custom_enchant_modifier/400"
+      actions:
+        - class: PlayEffects
+          effect: bee
+        - class: ChangeContext
+          source_is_target: true
+          actions:
+            - class: SpawnEntity
+              set_target: true
+              entity_types:
+                bee: 100
+            - class: Aggro
+  effects:
+    bee:
+    - location: origin
+      sound: block_beehive_work
+      particle: spore_blossom_air
+      particle_count: 3
+    - location: origin
+      sound: entity_bee_pollinate
+      particle: composter
+      particle_count: 3
+    - location: origin
+      particle: dust_color_transition
+      particle_offset_x: 1
+      particle_offset_y: 1
+      particle_offset_z: 1
+      to_color: "ffff00"
+      color: "#32cd32"
+      particle_count: 15
+
+  parameters:
+    magic_damage: false
+    undo: 1200000
+    target: other
+    target_type: LivingEntity
+    range: 6
+    allow_max_range: true
+    entity_parameters:
+          brain:
+            goals:
+              - type: melee_attack
+                priority: 1
+              - type: follow_owner
+                priority: 2
+              - type: random_stroll
+                priority: 3
+            targets:
+              - owner_hurt_target
+              - owner_hurt_by_target
+              - hurt_by_target

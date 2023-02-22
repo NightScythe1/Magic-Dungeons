@@ -1,0 +1,43 @@
+gravity:
+  inherit: base_unique_spell
+  triggers:
+    - damage_dealt
+  name: "§5Gravity"
+  description: Pulls enemies in on impact
+  actions:
+    cast:
+    - class: PlayEffects
+      effects: gravity
+    - class: AreaOfEffect
+      target_source: true
+      radius: 6.5
+      actions:
+        - class: Velocity
+          push: -1*(custom_enchant_modifier/80)
+          y_offset: -0.5
+  effects:
+    gravity:
+    - location: target
+      particle: falling_obsidian_tear
+      particle_count: 30
+      particle_offset_x: 2
+      particle_offset_y: 2
+      particle_offset_z: 2
+      offset: 0,2,0
+    - location: target
+      particle: enchantment_table
+      particle_count: 50
+      particle_offset_x: 0.1
+      particle_offset_y: 0.1
+      particle_offset_z: 0.1
+      particle_data: 1
+      offset: 0,2,0
+    - sound: block_enchantment_table_use
+      sound_volume: 0.7
+      sound_pitch: -2
+  parameters:
+    cooldown: 3000
+    target: block
+    target_type: LivingEntity
+    range: 4
+    allow_max_range: true

@@ -1,0 +1,55 @@
+dynamo:
+  inherit: base_unique_spell
+  triggers:
+    - sprint
+  name: "§9Dynamo"
+  description: Deal up to 33% more damage with sprint attacks
+  actions:
+    cast:
+    - class: Interval
+      duration: 10000
+      actions:
+        - class: CheckTrigger
+          trigger: damage_dealt
+          damage_type: physical
+          actions:
+            - class: ChangeContext
+              target: other_entity
+              actions:
+                - class: PlayEffects
+                  requires_entity_target: true
+                  effect: dynamo
+                - class: Damage
+                  requires_entity_target: true
+                  damage: "damage_dealt*(custom_enchant_modifier/300)"
+                - class: Stop
+                  requires_entity_target: true
+        - class: CheckTrigger
+          trigger: stop_sprint
+          actions:
+            - class: Stop
+  effects:
+    dynamo:
+    - location: target
+      particle: wax_off
+      particle_offset_x: 0.4
+      particle_offset_y: 0.9
+      particle_offset_z: 0.4
+      particle_count: 10
+      particle_data: 0.1
+    - location: target
+      particle: wax_on
+      particle_offset_x: 0.4
+      particle_offset_y: 0.9
+      particle_offset_z: 0.4
+      particle_count: 10
+      particle_data: 0.1
+    - sound: entity_ender_eye_death
+      sound_pitch: 2
+  parameters:
+    magic_damage: false
+    damage_type: physical
+    range: 64
+    cancel_on_no_wand: true
+    target: damage_target
+    target_type: LivingEntity

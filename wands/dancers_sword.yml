@@ -1,0 +1,17 @@
+dancers_sword:
+  inherit: base_unique_melee
+  name: "&6Dancer's Sword"
+  lore:
+  - "&0. "
+  - "&7When in Main Hand:"
+  - "&0. &9@custom_enchant_modifier% Rampaging"
+  - "&0. &2$attack_damage Attack Damage"
+  - "&0. &21.4 Attack Speed"
+  icon: iron_sword{CustomModelData:76007}
+  item_attribute_slot: mainhand
+  item_properties:
+    item_attributes:
+      generic_attack_damage: (ceil(rand(35,60))/10)
+      generic_attack_speed: -2.6
+  spells:
+  - rampaging

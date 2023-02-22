@@ -1,0 +1,56 @@
+purity:
+  inherit: base_unique_spell
+  triggers:
+    - damage_dealt
+  name: "&ePurity"
+  description: Up to extra 33% damage to Undead
+  actions:
+    cast:
+    - class: CheckEntity
+      actions:
+        - class: PlayEffects
+          effect: smite
+        - class: Damage
+          damage: "damage_dealt*(custom_enchant_modifier/300)"
+      allowed_entities:
+        - zombie
+        - husk
+        - skeleton
+        - stray
+        - zombie_villager
+        - giant
+        - phantom
+        - drowned
+        - skeleton_horse
+        - zombie_horse
+        - zombified_piglin
+        - zoglin
+        - wither_skeleton
+        - wither
+  effects:
+    smite:
+    - location: target
+      sound: block_beacon_power_select
+      sound_volume: 0.4
+      sound_pitch: 2
+      particle: fireworks_spark
+      particle_count: 3
+      particle_data: 0.1
+    - location: target
+      sound: entity_blaze_hurt
+      particle: end_rod
+      particle_count: 3
+      particle_data: 0.1
+    - location: target
+      particle: dust_color_transition
+      particle_offset_x: 0.3
+      particle_offset_y: 0.5
+      particle_offset_z: 0.3
+      to_color: "ffffff"
+      color: "#ffff00"
+      particle_count: 20
+  parameters:
+    magic_damage: false
+    target: damage_target
+    target_type: LivingEntity
+    range: 64

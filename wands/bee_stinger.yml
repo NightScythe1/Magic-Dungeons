@@ -1,0 +1,17 @@
+bee_stinger:
+  inherit: base_unique_melee
+  name: "&6Bee Stinger"
+  lore:
+  - "&0. "
+  - "&7When in Main Hand:"
+  - "&0. &e@custom_enchant_modifier% Busy Bee"
+  - "&0. &2$attack_damage Attack Damage"
+  - "&0. &22.8 Attack Speed"
+  icon: iron_hoe{CustomModelData:76001}
+  item_attribute_slot: mainhand
+  item_properties:
+    item_attributes:
+      generic_attack_damage: (ceil(rand(15,30))/10)
+      generic_attack_speed: -1.2
+  spells:
+  - busy_bee

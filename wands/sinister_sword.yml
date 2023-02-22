@@ -1,0 +1,17 @@
+sinister_sword:
+  inherit: base_unique_melee
+  name: "&6Sinister Sword"
+  lore:
+  - "&0. "
+  - "&7When in Main Hand:"
+  - "&0. &5@custom_enchant_modifier% Critical Hit"
+  - "&0. &2$attack_damage Attack Damage"
+  - "&0. &21.5 Attack Speed"
+  icon: iron_hoe{CustomModelData:76005}
+  item_attribute_slot: mainhand
+  item_properties:
+    item_attributes:
+      generic_attack_damage: (ceil(rand(45,70))/10)
+      generic_attack_speed: -2.5
+  spells:
+  - critical_hit

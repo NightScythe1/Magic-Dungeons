@@ -1,0 +1,194 @@
+spawn_ancient_warrior:
+  actions:
+    cast:
+    - class: Random
+      actions:
+        - class: SpawnEntity
+          item: battlestaff_of_terror
+          drops:
+          - battlestaff_of_terror: 50
+          - none: 50
+        - class: SpawnEntity
+          item: bee_stinger
+          drops:
+          - bee_stinger: 50
+          - none: 50
+        - class: SpawnEntity
+          item: beginning_and_end
+          drops:
+          - beginning_and_end: 50
+          - none: 50
+        - class: SpawnEntity
+          item: bone_cudgel
+          drops:
+          - bone_cudgel: 50
+          - none: 50
+        - class: SpawnEntity
+          item: broadsword
+          drops:
+          - broadsword: 50
+          - none: 50
+        - class: SpawnEntity
+          item: chill_gale_knife
+          drops:
+          - chill_gale_knife: 50
+          - none: 50
+        - class: SpawnEntity
+          item: cursed_axe
+          drops:
+          - cursed_axe: 50
+          - none: 50
+        - class: SpawnEntity
+          item: dancers_sword
+          drops:
+          - dancers_sword: 50
+          - none: 50
+        - class: SpawnEntity
+          item: dark_katana
+          drops:
+          - dark_katana: 50
+          - none: 50
+        - class: SpawnEntity
+          item: encrusted_anchor
+          drops:
+          - encrusted_anchor: 50
+          - none: 50
+        - class: SpawnEntity
+          item: fangs_of_frost
+          drops:
+          - fangs_of_frost: 50
+          - none: 50
+        - class: SpawnEntity
+          item: firebrand
+          drops:
+          - firebrand: 50
+          - none: 50
+        - class: SpawnEntity
+          item: flail
+          drops:
+          - flail: 50
+          - none: 50
+        - class: SpawnEntity
+          item: freezing_foil
+          drops:
+          - #WEAPON: 50
+          - none: 50
+        - class: SpawnEntity
+          item: grave_bane
+          drops:
+          - grave_bane: 50
+          - none: 50
+        - class: SpawnEntity
+          item: great_axeblade
+          drops:
+          - great_axeblade: 50
+          - none: 50
+        #- class: SpawnEntity
+        #  item: growing_staff
+        #  drops:
+        #  - growing_staff: 50
+        #  - none: 50
+        - class: SpawnEntity
+          item: hawkbrand
+          drops:
+          - hawkbrand: 50
+          - none: 50
+        - class: SpawnEntity
+          item: heartstealer
+          drops:
+          - heartstealer: 50
+          - none: 50
+        - class: SpawnEntity
+          item: masters_katana
+          drops:
+          - masters_katana: 50
+          - none: 50
+        - class: SpawnEntity
+          item: nameless_blade
+          drops:
+          - nameless_blade: 50
+          - none: 50
+        - class: SpawnEntity
+          item: resolute_tempest_knife
+          drops:
+          - resolute_tempest_knife: 50
+          - none: 50
+        - class: SpawnEntity
+          item: sinister_sword
+          drops:
+          - sinister_sword: 50
+          - none: 50
+        - class: SpawnEntity
+          item: suns_grace
+          drops:
+          - suns_grace: 50
+          - none: 50
+        #- class: SpawnEntity
+        #  item: swift_striker
+        #  drops:
+        #  - swift_striker: 50
+        #  - none: 50
+        - class: SpawnEntity
+          item: venom_glaive
+          drops:
+          - venom_glaive: 50
+          - none: 50
+        - class: SpawnEntity
+          item: vine_whip
+          drops:
+          - vine_whip: 50
+          - none: 50
+
+  parameters:
+    target: other
+    track_radius: 64
+    range: 3
+    allow_max_range: true
+    type: vindicator
+    default_drops: true
+    drop_items: true
+    disguise:
+      type: wither_skeleton
+    health: 40
+    potion_effects:
+      dolphins_grace: 15
+    chestplate: netherite_chestplate
+    leggings: netherite_leggings
+    helmet: netherite_helmet
+    boots: netherite_boots
+    name: "&6Ancient Warrior"
+    protection:
+      projectile: 0.5
+    entity_attributes:
+      generic_follow_range: 64
+      generic_knockback_resistance: 20
+    attributes:
+      custom_enchant_modifier: 100
+    triggers:
+      damage:
+        cast: anticheese
+      death:
+        cast: drop_weapon
+      damage_dealt:
+        cast:
+          ambush: 1
+          burning: 1
+          busy_bee: 1
+          chains: 1
+          critical_hit: 1
+          dynamo: 1
+          exploding: 1
+          freezing: 1
+          gravity: 1
+          illagers_bane: 1
+          leeching: 1
+          poison_cloud: 1
+          poisoning: 1
+          purity: 1
+          radiance: 1
+          rampaging: 1
+          razor: 1
+          rushdown: 1
+          void_strike: 1
+          weakening: 1
+          none: 20

@@ -1,0 +1,7 @@
+spells:
+  base_unique_spell:
+    cooldown: ""
+    cancel: ""
+  base_unique_ranged:
+    cooldown: ""
+    cancel: ""

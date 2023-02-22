@@ -1,0 +1,16 @@
+auto_crossbow:
+  inherit: base_unique_ranged
+  name: "&6&lAuto Crossbow"
+  lore:
+  - "&9Accelerate"
+  - "&7When Fully Drawn:"
+  - "&0. &21.5x Damage Multiplier"
+  - "&0. &26x Speed Multiplier"
+  icon: crossbow{CustomModelData:76002}
+  item_attribute_slot: mainhand
+  overrides:
+    arrow_accelerate:
+      arrow_damage: "bowpull * 1.5"
+      speed: "bowpull * 6"
+  spells:
+  - arrow_accelerate

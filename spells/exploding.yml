@@ -1,0 +1,47 @@
+exploding:
+  inherit: base_unique_spell
+  triggers:
+    - kill
+  name: "§cExploding"
+  description: Kills explode for up to 50% extra damage
+  actions:
+    cast:
+    - class: PlayEffects
+      effects: explode
+    - class: AreaOfEffect
+      target_source: true
+      target_count: 5
+      radius: 3
+      actions:
+        - class: Damage
+          damage: damage_dealt*(custom_enchant_modifier/200)
+        - class: Velocity
+          push: 1
+          y_offset: 0.3
+  effects:
+    explode:
+    - location: target
+      particle: lava
+      particle_count: 10
+      particle_offset_x: 0.5
+      particle_offset_y: 0.5
+      particle_offset_z: 0.5
+      offset: 0,2,0
+    - location: target
+      particle: explosion_large
+      particle_count: 3
+      particle_offset_x: 0.5
+      particle_offset_y: 0.5
+      particle_offset_z: 0.5
+      offset: 0,2,0
+    - sound: entity_generic_explode
+      sound_volume: 0.7
+  parameters:
+    cooldown: 3000
+    damage_max_distance: 6
+    damage_type: explosion
+    magic_damage: false
+    target: other
+    target_type: LivingEntity
+    range: 4
+    allow_max_range: true

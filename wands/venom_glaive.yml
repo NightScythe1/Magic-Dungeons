@@ -1,0 +1,17 @@
+venom_glaive:
+  inherit: base_unique_melee
+  name: "&6Venom Glaive"
+  lore:
+  - "&0. "
+  - "&7When in Main Hand:"
+  - "&0. &a@custom_enchant_modifier% Poison Cloud"
+  - "&0. &2$attack_damage Attack Damage"
+  - "&0. &21.6 Attack Speed"
+  icon: iron_sword{CustomModelData:76011}
+  item_attribute_slot: mainhand
+  item_properties:
+    item_attributes:
+      generic_attack_damage: (ceil(rand(50,75))/10)
+      generic_attack_speed: -2.4
+  spells:
+  - poison_cloud

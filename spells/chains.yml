@@ -1,0 +1,59 @@
+chains:
+  inherit: base_unique_spell
+  triggers:
+    - damage_dealt
+  name: "§9Chains"
+  description: Attacks have up to 33% chance to chain enemies
+  actions:
+    cast:
+    - class: Probability
+      probability: custom_enchant_modifier/300
+      actions:
+        - class: PlayEffects
+          effects: gravity
+        - class: ApplyCooldown
+          duration: 3000
+          target_caster: true
+          spells:
+            - chains
+        - class: Interval
+          duration: 2500
+          actions:
+            - class: AreaOfEffect
+              target_source: true
+              radius: 3
+              actions:
+                - class: Velocity
+                  push: -0.5
+                  y_offset: -1
+  effects:
+    gravity:
+     - class: EffectSingle
+       sound: block_anvil_destroy
+       sound_volume: 1
+       sound_pitch: 0
+       location: target
+       source_location: feet
+       target_location: feet
+       effectlib:
+          class: Warp
+          particle: redstone
+          color: "#696969"
+          rings: 7
+          radius: 1
+          particles: 60
+          duration: 2500
+     - class: EffectSingle
+       location: target
+       source_location: block_center
+       effectlib:
+         class: AnimatedBall
+         particle: smoke_normal
+         size: 1
+         y_factor: 2
+         duration: 2000
+  parameters:
+    target: block
+    target_type: LivingEntity
+    range: 4
+    allow_max_range: true
