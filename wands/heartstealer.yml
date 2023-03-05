@@ -2,6 +2,7 @@ heartstealer:
   inherit: base_unique_melee
   name: "&6Heartstealer"
   lore:
+  - $enchantments
   - "&0. "
   - "&7When in Main Hand:"
   - "&0. &4@custom_enchant_modifier% Leeching"

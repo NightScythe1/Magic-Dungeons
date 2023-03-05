@@ -2,6 +2,7 @@ great_axeblade:
   inherit: base_unique_melee
   name: "&6Great Axeblade"
   lore:
+  - $enchantments
   - "&0. "
   - "&7When in Main Hand:"
   - "&0. &9@custom_enchant_modifier% Dynamo"

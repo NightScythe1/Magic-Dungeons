@@ -2,6 +2,7 @@ freezing_foil:
   inherit: base_unique_melee
   name: "&6Freezing Foil"
   lore:
+  - $enchantments
   - "&0. "
   - "&7When in Main Hand:"
   - "&0. &b@custom_enchant_modifier% Freezing"

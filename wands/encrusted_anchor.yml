@@ -2,6 +2,7 @@ encrusted_anchor:
   inherit: base_unique_melee
   name: "&6Encrusted Anchor"
   lore:
+  - $enchantments
   - "&0. "
   - "&7When in Main Hand:"
   - "&0. &5@custom_enchant_modifier% Gravity"

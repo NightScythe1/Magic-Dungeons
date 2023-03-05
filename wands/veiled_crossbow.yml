@@ -2,6 +2,7 @@ veiled_crossbow:
   inherit: base_unique_ranged
   name: "&6&lVeiled Crossbow"
   lore:
+  - $enchantments
   - "&5Shadow Shot"
   - "&7When Fully Drawn:"
   - "&0. &24.5x Damage Multiplier"

@@ -2,6 +2,7 @@ venom_glaive:
   inherit: base_unique_melee
   name: "&6Venom Glaive"
   lore:
+  - $enchantments
   - "&0. "
   - "&7When in Main Hand:"
   - "&0. &a@custom_enchant_modifier% Poison Cloud"

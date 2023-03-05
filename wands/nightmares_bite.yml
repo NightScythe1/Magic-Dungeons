@@ -2,6 +2,7 @@ nightmares_bite:
   inherit: base_unique_melee
   name: "&6Nightmare's Bite"
   lore:
+  - $enchantments
   - "&0. "
   - "&7When in Main Hand:"
   - "&0. &a@custom_enchant_modifier% Poison Cloud"

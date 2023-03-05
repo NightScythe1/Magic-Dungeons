@@ -2,6 +2,7 @@ fangs_of_frost:
   inherit: base_unique_melee
   name: "&6Fangs of Frost"
   lore:
+  - $enchantments
   - "&0. "
   - "&7When in Main Hand:"
   - "&0. &b@custom_enchant_modifier% Freezing"

@@ -2,6 +2,7 @@ beginning_and_end:
   inherit: base_unique_melee
   name: "&6Beginning and End"
   lore:
+  - $enchantments
   - "&0. "
   - "&7When in Main Hand:"
   - "&0. &5@custom_enchant_modifier% Void Strike"

@@ -2,6 +2,7 @@ growing_staff:
   inherit: base_unique_melee
   name: "&6Growing Staff"
   lore:
+  - $enchantments
   - "&0. "
   - "&7When in Main Hand:"
   - "&0. &e@custom_enchant_modifier% Committed"

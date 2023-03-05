@@ -2,6 +2,7 @@ sinister_sword:
   inherit: base_unique_melee
   name: "&6Sinister Sword"
   lore:
+  - $enchantments
   - "&0. "
   - "&7When in Main Hand:"
   - "&0. &5@custom_enchant_modifier% Critical Hit"

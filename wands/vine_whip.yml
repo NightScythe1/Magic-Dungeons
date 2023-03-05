@@ -2,6 +2,7 @@ vine_whip:
   inherit: base_unique_melee
   name: "&6Vine Whip"
   lore:
+  - $enchantments
   - "&0. "
   - "&7When in Main Hand:"
   - "&0. &a@custom_enchant_modifier% Poisoning"
